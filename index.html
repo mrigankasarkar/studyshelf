@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="theme-color" content="#10251f">
+  <meta name="description" content="Explore, read, and download study notes in one organized library on StudyShelf.">
+  <meta name="009faac8d075eb9a0207a3a2886d9748a5e8546a" content="009faac8d075eb9a0207a3a2886d9748a5e8546a">
+  <title>StudyShelf — Your learning library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="public-page">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand" aria-label="StudyShelf home"><span class="brand-mark" aria-hidden="true">S</span><span>study<span class="brand-accent">shelf</span><small>THE STUDY LIBRARY</small></span></a>
+      <nav class="header-nav" aria-label="Main navigation"><a class="nav-link active" href="#library">Library</a><a class="nav-link" href="#about">About</a><a class="header-cta" href="#library">Explore notes <span aria-hidden="true">↗</span></a></nav>
+      <button class="mobile-menu" type="button" aria-label="Scroll to study library" onclick="document.getElementById('library').scrollIntoView({behavior:'smooth'})">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-wrap">
+      <div class="hero-grid container">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEXT STUDY SESSION STARTS HERE</div>
+          <h1>Good notes.<br><em>Clearer thinking.</em></h1>
+          <p class="hero-description">A thoughtfully organized space for the material that moves your learning forward. Find your notes, focus on what matters, and keep making progress.</p>
+          <div class="hero-actions"><a class="button button-dark" href="#library">Explore the library <span aria-hidden="true">→</span></a><span class="hero-note"><span class="mini-check">✓</span> Free to explore. Easy to use.</span></div>
+          <div class="hero-stats"><div><strong id="heroNoteCount">—</strong><span>study resources</span></div><div><strong>PDF</strong><span>ready to read</span></div><div><strong>Anytime</strong><span>learn at your pace</span></div></div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of organized study notes" role="img">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-label label-top"><span class="label-icon">✳</span><span><b>Make space to learn</b><small>One library. Less searching.</small></span></div>
+          <div class="paper-stack"><div class="paper paper-back"><span class="paper-kicker">STUDY NOTES / 03</span><div class="paper-line wide"></div><div class="paper-line"></div><div class="paper-line short"></div><div class="paper-block"></div><div class="paper-line wide"></div><div class="paper-line"></div></div><div class="paper paper-front"><div class="paper-top"><span class="paper-kicker">YOUR LEARNING SPACE</span><span class="paper-badge">PDF</span></div><h3>Small steps.<br><em>Big progress.</em></h3><p>Keep your focus on the ideas, not on finding the files.</p><div class="paper-divider"></div><div class="paper-foot"><span>STUDYSHELF</span><span>01 — 04</span></div></div><div class="floating-stamp"><span>✦</span><b>Learn<br>with intent.</b></div></div>
+          <div class="art-label label-bottom"><span class="label-icon green-icon">↗</span><span><b>Pick up where you left off</b><small>Your next topic is one search away.</small></span></div>
+        </div>
+      </div>
+      <div class="hero-bottom-rule"></div>
+    </section>
+
+    <section class="library-section container" id="library">
+      <div class="library-intro"><div><div class="eyebrow eyebrow-muted"><span class="eyebrow-dot"></span> THE COLLECTION</div><h2>Your study library<span class="heading-period">.</span></h2><p>Everything you need for a more focused study session.</p></div><div class="library-counter"><span class="counter-icon">▤</span><span><strong id="noteCount">0 notes</strong><small>Available to explore</small></span></div></div>
+      <div class="library-toolbar"><div class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><input type="search" id="searchInput" placeholder="Search by topic, title, subject, or teacher…" aria-label="Search notes"><button class="search-button" id="searchButton" type="button">Search <span aria-hidden="true">→</span></button></div><div class="filter-controls"><label class="filter-label" for="classFilter">Class</label><select id="classFilter" aria-label="Filter by class"><option value="all">All classes</option></select><label class="filter-label" for="subjectFilter">Subject</label><select id="subjectFilter" aria-label="Filter by subject"><option value="all">All subjects</option></select><label class="filter-label" for="teacherFilter">Teacher</label><select id="teacherFilter" aria-label="Filter by teacher"><option value="all">All teachers</option></select><label class="filter-label sort-label" for="sortFilter">Sort</label><select id="sortFilter" aria-label="Sort notes"><option value="newest">Recently added</option><option value="az">Title: A–Z</option></select></div></div>
+      <div class="saved-toolbar-row">
+        <button type="button" id="savedOnlyButton" class="saved-only-button" aria-pressed="false">
+          <span aria-hidden="true">♡</span> Saved notes <span class="saved-count" id="savedCount">0</span>
+        </button>
+        <span class="saved-hint">Keep useful notes close at hand on this device.</span>
+      </div>
+      <div class="collection-meta"><span>SHOWING <b id="collectionShowing">ALL RESOURCES</b></span><span class="meta-right"><span class="live-dot"></span> Library updated from StudyShelf</span></div>
+      <div class="notes-grid" id="notesGrid" aria-live="polite" aria-busy="true"><div class="loading-card"><span class="loading-dot"></span>Preparing your library…</div></div>
+    </section>
+
+    <section class="closing-banner container" id="about"><div class="closing-symbol">S<span>.</span></div><div><div class="eyebrow eyebrow-light">A LITTLE MORE FOCUS</div><h2>Make your next study hour count.</h2><p>Find the material. Understand the idea. Keep moving forward.</p></div><a class="button button-light" href="#library">Back to the library <span aria-hidden="true">↑</span></a></section>
+  </main>
+
+  <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+  <footer class="site-footer"><div class="footer-inner"><a href="index.html" class="footer-brand">studyshelf<span>.</span></a><span>Made for curious minds and focused study sessions.</span><span>© <span id="footerYear">2026</span> StudyShelf</span></div></footer>
+
+  <div class="viewer" id="pdfViewer" role="dialog" aria-modal="true" aria-labelledby="viewerTitle" aria-hidden="true">
+    <header class="reader-topbar">
+      <div class="reader-brand"><span class="viewer-file-icon">PDF</span><div class="reader-title-wrap"><small>STUDYSHELF READER</small><h2 id="viewerTitle">Reading notes</h2><p id="readerMeta">Your study document</p></div></div>
+      <div class="reader-top-actions"><button class="reader-icon-button" id="readerDownload" type="button" title="Download PDF" aria-label="Download PDF">↓ <span>Download</span></button><button class="viewer-close" id="closeViewer" type="button"><span aria-hidden="true">×</span> Close</button></div>
+    </header>
+    <div class="reader-toolbar" role="toolbar" aria-label="PDF controls">
+      <button class="reader-tool pages-toggle-button" id="toggleThumbnails" type="button" aria-controls="readerSidebar" aria-pressed="true" title="Collapse document pages" aria-label="Collapse document pages">☷</button>
+      <div class="reader-tool-group page-tools"><button class="reader-tool" id="prevPage" type="button" title="Previous page" aria-label="Previous page">‹</button><label class="page-indicator"><input id="currentPage" type="number" min="1" value="1" aria-label="Current page"><span>/ <b id="totalPages">—</b></span></label><button class="reader-tool" id="nextPage" type="button" title="Next page" aria-label="Next page">›</button></div>
+      <span class="reader-tool-divider"></span>
+      <div class="reader-tool-group zoom-tools"><button class="reader-tool" id="zoomOut" type="button" title="Zoom out" aria-label="Zoom out">−</button><output id="zoomLevel">100%</output><button class="reader-tool" id="zoomIn" type="button" title="Zoom in" aria-label="Zoom in">+</button><button class="reader-tool fit-button" id="fitWidth" type="button" title="Fit page to width">Fit width</button></div>
+      <div class="reader-toolbar-spacer"></div><button class="reader-tool" id="readingModeButton" type="button" aria-pressed="false" title="Toggle distraction-free reading">▤ <span>Reading mode</span></button><button class="reader-tool" id="fullscreenButton" type="button" title="Toggle full screen">⛶ <span>Full screen</span></button>
+    </div>
+    <div class="reader-body"><aside class="reader-sidebar" id="readerSidebar" aria-label="Page thumbnails"><div class="sidebar-heading"><span>DOCUMENT PAGES</span><small id="thumbnailCount">— pages</small></div><div id="thumbnailList" class="thumbnail-list"></div></aside>
+      <main class="reader-stage" id="readerStage"><div class="reader-loading" id="readerLoading"><span class="reader-spinner"></span><strong>Preparing your document</strong><p>This may take a moment for large PDFs.</p></div><div class="reader-error" id="readerError" hidden><span>PDF</span><h3>We couldn't open this document</h3><p id="readerErrorMessage">Check your connection and try again.</p><button class="btn btn-primary" id="retryReader" type="button">Try again</button><a id="openPdfExternal" href="#" target="_blank" rel="noopener noreferrer">Open PDF in a new tab</a></div><div id="pdfPages" class="pdf-pages" aria-label="PDF pages"></div></main>
+    </div>
+    <div class="reader-statusbar"><span><i class="status-indicator"></i> Ready for focused reading</span><span id="readerStatus">Hold Ctrl and scroll to zoom · Use + / − for fine control</span></div>
+    <div class="reader-focus-controls" id="readerFocusControls"><button type="button" id="exitReadingMode" class="reader-tool">Exit reading mode</button><button type="button" id="focusFullscreenButton" class="reader-tool" title="Toggle full screen">⛶ Full screen</button></div>
+  </div>
+
+  <script async src="https://plump-plastic.com/bY3wVl0.PG3vphvzb/mWVAJzZ/DY0q3FN/TqgJxoN_TuYj5LLST/cJ1QOwDPE-1yN/z/Mk"></script>
+  <script>
+(function(xgzdc){
+var d = document,
+    s = d.createElement('script'),
+    l = d.currentScript || d.scripts[d.scripts.length - 1];
+s.settings = xgzdc || {};
+s.src = "\/\/massivesalad.com\/bzXRVRs.dWGllL0GYwWKcG\/be\/m\/9Ku_ZUUJlMkKP\/Tach1_OoDrED2pNzjvUkt\/NAz\/UE4xMlTWY\/2IOIQw";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+  </script>
+  <script>
+(function(cg){
+var d = document,
+    s = d.createElement('script'),
+    l = d.currentScript || d.scripts[d.scripts.length - 1];
+s.settings = cg || {};
+s.src = "\/\/massivesalad.com\/b.X\/V\/sQdvGBlC0BYsWGcV\/Qedmp9iuLZCUXlxkyPPTWcz1\/OGDgEs2eN\/D-k\/tVNMzGUk4gMvT-Yo1CM-wV";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
